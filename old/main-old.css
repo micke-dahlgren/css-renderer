@@ -1,0 +1,57 @@
+:root{
+  --pixelSizePx: 8px;
+  --pixelSizeInt: 8;
+  --screenWidth: 20px;
+  --screenHeight: 20px;
+  --pixelMaskW: 0;
+  --pixelMaskH: 200px;
+  --animTime: 0.2s;
+}
+
+
+
+body, html{
+  height:100%;
+  width:100%;
+  padding:0;
+  margin:0;
+  background:black;
+}
+
+#screen{
+  width: calc( var(--pixelSizeInt) * var(--screenWidth) );
+  height: calc( var(--pixelSizeInt) * var(--screenHeight) );
+  display:flex;
+  flex-wrap: wrap;
+  background:black;
+}
+
+.channel{
+  position:absolute;
+  width:var(--pixelSizePx);
+  height:var(--pixelSizePx);
+  mix-blend-mode: lighten;
+  opacity:1.0;
+  will-change: opacity;
+}
+
+.red{
+  background: rgb(255,0,0);
+}
+
+.green{
+  background:rgb(0,255,0)
+}
+
+.blue{
+  background:rgb(0,0,255)
+}
+
+.pixel{
+  z-index: 1; /* it is required */
+  overflow: hidden; /* it is required */
+  width: var(--pixelSizePx);
+  height: var(--pixelSizePx);
+  border-radius: 1px; /* it is required */      
+  clip-path: polygon(0px 0px, 0px 100%, 100% 100%, 100% 0); /* Fix for Firefox*/
+}

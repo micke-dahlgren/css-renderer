@@ -1,0 +1,12 @@
+body{
+  background:burlywood;
+}
+
+.screen {
+  display: flex;
+  width: 400px;
+  background:black;
+}
+canvas {
+  max-width: 100%;
+}
